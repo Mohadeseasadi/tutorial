@@ -2,16 +2,10 @@ const path = require('path')
 
 const express = require('express');
 
-const admin = require('./admin')
+const productsControllers = require('../controllers/products')
 
 const router = express.Router()
 
-router.get('/',(req,res,next)=>{
-    console.log('shop', admin.product)
-    res.render('shop', {
-        pageTitle :'فروشگاه' ,
-        productKey : admin.product
-    })    
-})
+router.get('/',productsControllers.getProduct)
 
 module.exports = router
