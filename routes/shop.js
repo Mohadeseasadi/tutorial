@@ -9,7 +9,8 @@ const router = express.Router()
 router.get('/',(req,res,next)=>{
     console.log('shop', admin.product)
     res.render('shop', {
-        pageTitle :'فروشگاه'
+        pageTitle :'فروشگاه' ,
+        productKey : admin.product
     })    
 })
 
