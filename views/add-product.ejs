@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= pageTitle %></title>
-    <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-
-    <header class="main-header">
-        <nav>
-            <ul class="item-list">
-                <li class="item"><a href="/">فروشگاه</a></li>
-                <li class="item"><a href="/admin/add-product">افزودن محصول</a></li>
-            </ul>
-        </nav>
-    </header>
+<%- include('includes/header.ejs') %>
 
     <main>
         <form action="/admin/add-product" method="post" class="product-form">
