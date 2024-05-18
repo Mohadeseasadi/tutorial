@@ -2,9 +2,13 @@
 
     <main>
         <p>لیست محصولات</p>
-        <% if(productKey.length>0){ %>
-            <%for(let item of productKey) {%>
-                <p><%= item.titles %></p>
+        <% if(products.length>0){ %>
+            <%for(let item of products) {%>
+                <p><%= item.title %></p>
+                <form action="/" method="post">
+                    <input type="hidden" value="<%= item._id %>" name="productId">
+                    <button type="submit">Delete</button>
+                </form>
             <% } %>
         <% } else{ %>
             <p>محصولی پیدا نشد</p>

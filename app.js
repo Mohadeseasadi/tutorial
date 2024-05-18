@@ -2,6 +2,8 @@ const path = require('path')
 const express = require('express');
 const app = express()
 
+const mongoConnect = require('./util/database').mongoConnect
+
 app.set('view engine','ejs')
 app.set('views','views')
 
@@ -20,4 +22,7 @@ app.use((req,res,next)=>{
     res.status(404).send('<h2>Not Found</h2>')
 })
 
-app.listen(3000)
+
+mongoConnect(()=>{
+    app.listen(3000)
+})
